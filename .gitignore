@@ -1,0 +1,10 @@
+node_modules/
+.next/
+out/
+.netlify/
+*.log
+*.tsbuildinfo
+.DS_Store
+Thumbs.db
+.env*
+!.env.example
