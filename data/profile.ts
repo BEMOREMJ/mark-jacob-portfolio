@@ -7,16 +7,17 @@ export const profile = {
 };
 
 export const skillGroups = [
-  { title: "Data & machine learning", skills: ["Python", "SQL", "pandas", "NumPy", "scikit-learn", "TensorFlow / Keras", "PyTorch", "LightGBM"] },
-  { title: "Reliable AI systems", skills: ["LLM evaluation", "LoRA", "LangGraph", "CrewAI", "Prompt design", "Human review"] },
-  { title: "Product & backend engineering", skills: ["FastAPI", "Next.js", "PostgreSQL", "Supabase", "Git & GitHub", "API design"] },
-  { title: "Geospatial & analytical tools", skills: ["ArcGIS Pro", "Google Earth Engine", "Power BI", "Spatial analysis", "Remote sensing", "Data visualization"] }
+  { title: "Data Science & Analysis", skills: ["Python", "SQL", "pandas", "Statistical analysis", "Data visualization", "Power BI", "Decision support"] },
+  { title: "Machine Learning & AI Engineering", skills: ["scikit-learn", "TensorFlow / Keras", "PyTorch", "LightGBM", "Forecasting", "Computer vision", "LLM evaluation", "LoRA", "LangGraph"] },
+  { title: "Data & Backend Engineering", skills: ["Data modelling", "ETL workflows", "PostgreSQL", "FastAPI", "Supabase", "APIs", "Data validation"] },
+  { title: "Geospatial Systems & Digital Transformation", skills: ["ArcGIS Pro", "Google Earth Engine", "Geospatial analysis", "Enterprise architecture", "BPMN", "Ardoq", "Camunda", "Process improvement"] }
 ];
 
 export const experience = [
-  { role: "Python & AI Evaluation Contractor", organization: "Independent work conducted through the Turing platform", detail: "Contributed to structured evaluation and improvement tasks involving Python and AI-generated technical work." },
-  { role: "Organization Data Analyst", organization: "Digital Qatalyst", detail: "Supported data preparation, analysis and reporting to make organizational information more useful for decisions." },
-  { role: "GIS Intern", organization: "Survey of Kenya", detail: "Worked with mapping workflows and geospatial data in a national surveying context." }
+  { role: "Python & AI Evaluation Contractor", organization: "Independent work conducted through the Turing platform", dates: "Oct 2025 — Present", location: "Nairobi", detail: "Contributed to structured evaluation and improvement tasks involving Python and AI-generated technical work." },
+  { role: "Organization Data Analyst", organization: "Digital Qatalyst", dates: "Mar 2024 — Sep 2025", location: "Nairobi", detail: "Designed data frameworks, dashboards and analytical workflows supporting decision-making across several sectors. Built GenAI tools, supported enterprise architecture and digital transformation initiatives, and coordinated requirements and delivery as a product owner." },
+  { role: "Site Supervisor", organization: "Synoqs Africa Ltd", dates: "Apr 2023 — May 2024", location: "Nairobi", detail: "Coordinated site operations, quality inspections, materials, safety procedures and communication between clients, engineers and subcontractors. The role strengthened practical delivery, stakeholder coordination and operational problem-solving." },
+  { role: "Technical Sales Representative", organization: "CNBM", dates: "Jan 2023 — Apr 2023", location: "Nairobi", detail: "Prepared roofing estimates and translated project requirements into technical designs and product recommendations. Worked with clients, contractors, engineers and technical teams to develop suitable project solutions." }
 ];
 
 export const education = [

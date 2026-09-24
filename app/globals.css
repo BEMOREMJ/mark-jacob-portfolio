@@ -41,7 +41,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .availability { display: flex; align-items: center; gap: 8px; }
 .availability i { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 4px rgba(8,127,122,.12); }
 .hero-grid { flex: 1; display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(300px, .65fr); gap: clamp(40px, 8vw, 120px); align-items: center; padding: clamp(50px, 8vw, 110px) 0 55px; }
-.hero-copy h1 { max-width: 880px; margin-bottom: 30px; font-size: clamp(3.4rem, 7.1vw, 7rem); line-height: .98; letter-spacing: -.065em; font-weight: 690; }
+.hero-copy h1 { max-width: 880px; margin-bottom: 30px; font-size: clamp(3.4rem, 7.1vw, 7rem); line-height: .98; letter-spacing: -.065em; font-weight: 690; text-wrap: balance; }
 h1 em, .page-hero h1 em { color: var(--cobalt); font-family: Georgia, serif; font-weight: 400; }
 .hero-intro { max-width: 680px; color: var(--muted); font-size: clamp(1rem, 1.5vw, 1.2rem); line-height: 1.75; }
 .hero-actions { display: flex; gap: 18px; align-items: center; margin-top: 38px; }
@@ -131,6 +131,7 @@ h1 em, .page-hero h1 em { color: var(--cobalt); font-family: Georgia, serif; fon
 .timeline-number { color: var(--cobalt); font: .66rem var(--font-mono), monospace; }
 .timeline-org { margin-bottom: 5px; color: var(--muted); font: .62rem/1.5 var(--font-mono), monospace; text-transform: uppercase; letter-spacing: .06em; }
 .timeline-item h3 { margin: 0; font-size: 1.3rem; }
+.timeline-meta { margin: 9px 0 0; color: var(--muted); font: .62rem/1.5 var(--font-mono), monospace; }
 .timeline-item > p { max-width: 500px; margin: 0; color: var(--muted); font-size: .9rem; }
 .credentials-section { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(60px, 10vw, 140px); }
 .education-item { padding: 25px 0; border-top: 1px solid var(--line); }

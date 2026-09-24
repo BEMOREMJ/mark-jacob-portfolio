@@ -13,9 +13,9 @@ export default function Home() {
         <div className="hero-topline"><span>Portfolio / 2026</span><span className="availability"><i /> Open to thoughtful collaborations</span></div>
         <div className="hero-grid">
           <div className="hero-copy">
-            <p className="eyebrow">Data Scientist · AI Engineer</p>
-            <h1>I build intelligent systems grounded in <em>evidence</em> and place.</h1>
-            <p className="hero-intro">I&apos;m Mark Jacob Nyumba. I work across machine learning, reliable AI systems, backend product engineering and geospatial thinking—turning complex information into tools people can understand and use.</p>
+            <p className="eyebrow">Data Scientist · AI/ML Engineer</p>
+            <h1>Data scientist and AI/ML engineer turning complex data into practical, <em>intelligent systems.</em></h1>
+            <p className="hero-intro">I&apos;m Mark Jacob Nyumba. I work across data analysis, machine learning, data engineering, reliable AI and backend product development—bringing geospatial thinking and digital transformation experience to real-world problems.</p>
             <div className="hero-actions">
               <Link href="/projects" className="button primary">Explore projects <ArrowRight size={17} /></Link>
               <a href={profile.github} target="_blank" rel="noreferrer" className="button text-button"><Github size={17} /> GitHub <ArrowUpRight size={14} /></a>
@@ -67,7 +67,11 @@ export default function Home() {
           <div className="timeline">{experience.map((item, index) => (
             <article className="timeline-item" key={item.role}>
               <span className="timeline-number">0{index + 1}</span>
-              <div><p className="timeline-org">{item.organization}</p><h3>{item.role}</h3></div>
+              <div>
+                <p className="timeline-org">{item.organization}</p>
+                <h3>{item.role}</h3>
+                {item.dates && <p className="timeline-meta">{item.dates}{item.location ? ` · ${item.location}` : ""}</p>}
+              </div>
               <p>{item.detail}</p>
             </article>
           ))}</div>
