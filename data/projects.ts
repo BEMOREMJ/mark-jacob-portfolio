@@ -1,8 +1,20 @@
-export type ProjectCategory = "Data Science & Machine Learning" | "Software & AI Applications";
+export type ProjectCategory = "Data Science & Machine Learning" | "Data Engineering" | "Software & AI Applications";
 
 export type ProjectLink = {
   label: string;
   url: string;
+};
+
+export type ProjectImage = {
+  src: string;
+  alt: string;
+  href?: string;
+  caption?: string;
+};
+
+export type ProjectMedia = {
+  cardPreview?: ProjectImage;
+  caseStudy?: ProjectImage;
 };
 
 export type Project = {
@@ -21,6 +33,7 @@ export type Project = {
   result: string;
   limitations: string;
   links: ProjectLink[];
+  media?: ProjectMedia;
   featured: boolean;
   accent: "cobalt" | "teal" | "amber";
 };
@@ -121,7 +134,7 @@ export const projects: Project[] = [
     result: "A practical study of an end-to-end computer-vision workflow and the evaluation questions that accompany it.",
     limitations: "This is an educational prototype, not a diagnostic tool. Dataset shift and clinical validity remain unresolved.",
     links: [{ label: "Source repository", url: "https://github.com/BEMOREMJ/Pneumonia_detection" }],
-    featured: true,
+    featured: false,
     accent: "amber"
   },
   {
@@ -192,12 +205,60 @@ export const projects: Project[] = [
     links: [{ label: "Feature branch", url: "https://github.com/Modales/aifactory/tree/feature/cv-pose-tracking" }],
     featured: false,
     accent: "teal"
+  },
+  {
+    slug: "kenya-economic-data-platform",
+    number: "08",
+    title: "Kenya Economic Data Platform",
+    category: "Data Engineering",
+    status: "Completed · Public repository and deployed dashboard",
+    ownership: "Solo project",
+    role: "Solo developer · Personal data engineering project",
+    summary: "A Python and SQL data platform that ingests historical Kenyan exchange-rate and weather data, models it in BigQuery with dbt, and publishes validated reporting through reproducible pipelines with quality checks, backfills and recovery controls.",
+    challenge: "Exchange-rate and weather sources have different grains, coverage, provenance and publication constraints. The challenge was to build a reproducible historical platform that preserved raw evidence, reconciled each source into trusted reporting models and prevented failed pipeline candidates from replacing accepted outputs.",
+    approach: [
+      "Assessed source provenance, attribution, units and reuse constraints, then preserved retrieved raw snapshots with timestamps, checksums and ingestion manifests.",
+      "Modelled separate exchange-rate and location-level weather facts in BigQuery with dbt staging, dimensions, facts and monthly reporting marts.",
+      "Implemented deterministic reruns, bounded retries, targeted historical backfills and critical quality gates that protect trusted reports when candidate data fails validation.",
+      "Added immutable-by-application reporting releases, source-to-report reconciliation, pipeline-health reporting, recovery procedures, an operator runbook and offline GitHub Actions validation.",
+      "Published a static, interactive Plotly dashboard from the trusted weather release while withholding exchange-rate visualization until CBK redistribution terms are resolved."
+    ],
+    technology: ["Python", "SQL", "BigQuery Sandbox", "dbt Core", "SQLite", "Plotly", "GitHub Actions", "GitHub Pages"],
+    evidence: "The verified release reconciles 177 CBK exchange-rate observations and 306 NASA POWER weather observations into 19 monthly reporting rows: nine exchange-rate rows and ten weather rows. All nine sprint acceptance gates passed, and the warehouse completed 39 dbt tests successfully.",
+    result: "A reproducible historical data platform with preserved source evidence, warehouse models, guarded publication, recovery documentation and an interactive weather dashboard. A Nairobi September backfill added exactly 30 observations without changing baseline records, while an intentionally introduced missing-day defect failed live dbt checks and left trusted reporting unchanged before correction and recovery succeeded.",
+    limitations: "This is a historical snapshot rather than a live economic feed. Execution is orchestrated locally, while GitHub Actions validates code and does not schedule warehouse pipelines. Billing remained disabled, BigQuery Sandbox resources expire, and NASA POWER values are gridded estimates at representative points rather than station observations. The platform processes CBK exchange rates, but their public visualization remains withheld while redistribution terms are unresolved.",
+    links: [
+      { label: "View dashboard", url: "https://bemoremj.github.io/kenya-economic-data-platform/" },
+      { label: "View code", url: "https://github.com/BEMOREMJ/kenya-economic-data-platform" }
+    ],
+    media: {
+      cardPreview: {
+        src: "/images/projects/kenya-economic-data-platform-overview.png",
+        alt: "Kenya Economic Data Platform dashboard overview showing historical weather coverage and monthly charts.",
+        href: "https://bemoremj.github.io/kenya-economic-data-platform/"
+      },
+      caseStudy: {
+        src: "/images/projects/kenya-economic-data-platform-weather.png",
+        alt: "Detailed Kenya Economic Data Platform weather dashboard with historical monthly temperature and precipitation charts.",
+        href: "https://bemoremj.github.io/kenya-economic-data-platform/",
+        caption: "Historical weather detail from the verified reporting release. Open the interactive dashboard for Plotly hover values and coverage details."
+      }
+    },
+    featured: true,
+    accent: "cobalt"
   }
 ];
 
 export const projectCategories: ProjectCategory[] = [
   "Data Science & Machine Learning",
+  "Data Engineering",
   "Software & AI Applications"
 ];
+
+export const projectCategoryIds: Record<ProjectCategory, string> = {
+  "Data Science & Machine Learning": "data-science",
+  "Data Engineering": "data-engineering",
+  "Software & AI Applications": "software-ai"
+};
 
 export const getProject = (slug: string) => projects.find((project) => project.slug === slug);

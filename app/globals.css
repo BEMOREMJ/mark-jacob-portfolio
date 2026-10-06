@@ -75,6 +75,10 @@ h1 em, .page-hero h1 em { color: var(--cobalt); font-family: Georgia, serif; fon
 .project-card { min-width: 0; }
 .project-card-link { height: 100%; display: flex; flex-direction: column; border: 1px solid var(--line); background: rgba(255,255,255,.21); transition: transform .25s, border-color .25s, box-shadow .25s; }
 .project-card-link:hover { transform: translateY(-4px); border-color: var(--ink); box-shadow: 0 16px 34px rgba(11,32,52,.08); }
+.project-card-visual-link { display: block; }
+.project-card-visual-link:focus-visible, .project-card-content:focus-visible, .case-figure a:focus-visible { outline: 3px solid var(--cobalt); outline-offset: 3px; }
+.project-card-image { aspect-ratio: 1440 / 1050; overflow: hidden; border-bottom: 1px solid rgba(11,32,52,.2); background: white; }
+.project-card-image img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .project-visual { height: 270px; position: relative; overflow: hidden; border-bottom: 1px solid rgba(11,32,52,.2); background: #ddd9ce; }
 .project-visual.is-compact { height: 190px; }
 .visual-cobalt { --visual-accent: var(--cobalt); background-color: #dfe4ed; }
@@ -116,13 +120,14 @@ h1 em, .page-hero h1 em { color: var(--cobalt); font-family: Georgia, serif; fon
 .skill-group h3 { min-height: 72px; margin: 30px 0 22px; font-size: 1.25rem; line-height: 1.25; }
 .skill-group ul { margin: 0; padding: 0; list-style: none; color: #aeb9c2; font: .68rem/2 var(--font-mono), monospace; }
 .skill-group li::before { content: "+"; color: var(--amber); margin-right: 9px; }
-.tracks-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-.track-card { min-height: 430px; display: flex; flex-direction: column; justify-content: space-between; padding: 36px; border: 1px solid var(--ink); transition: transform .25s; }
+.tracks-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.track-card { min-width: 0; min-height: 420px; display: flex; flex-direction: column; justify-content: space-between; padding: 32px; border: 1px solid var(--ink); transition: transform .25s; }
 .track-card:hover { transform: translateY(-4px); }
 .track-1 { color: white; background: var(--cobalt); border-color: var(--cobalt); }
-.track-2 { background: #d7e2dd; }
+.track-2 { background: #e9dfca; }
+.track-3 { background: #d7e2dd; }
 .track-index { font: .62rem var(--font-mono), monospace; letter-spacing: .12em; }
-.track-card h3 { max-width: 450px; margin: 85px 0 20px; font-size: clamp(2rem, 4vw, 3.7rem); line-height: 1.02; letter-spacing: -.05em; }
+.track-card h3 { max-width: 450px; margin: 65px 0 20px; overflow-wrap: anywhere; font-size: clamp(1.8rem, 3vw, 3rem); line-height: 1.02; letter-spacing: -.05em; }
 .track-card p { max-width: 500px; font-size: .9rem; opacity: .78; }
 .track-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; border-top: 1px solid currentColor; font: .66rem var(--font-mono), monospace; text-transform: uppercase; }
 .experience-section { background: var(--paper-deep); }
@@ -188,6 +193,10 @@ h1 em, .page-hero h1 em { color: var(--cobalt); font-family: Georgia, serif; fon
 .approach-list p { margin: 0; }
 .tech-list { display: flex; flex-wrap: wrap; gap: 10px; margin: 35px 0 0; padding: 0; list-style: none; }
 .tech-list li { padding: 9px 12px; border: 1px solid var(--ink); font: .7rem var(--font-mono), monospace; }
+.case-figure { margin: 50px 0 100px; border: 1px solid var(--line); background: white; }
+.case-figure a { display: block; }
+.case-figure img { display: block; width: 100%; height: auto; object-fit: contain; }
+.case-figure figcaption { padding: 16px 20px; border-top: 1px solid var(--line); color: var(--muted); font: .66rem/1.6 var(--font-mono), monospace; }
 .case-pair { display: grid; grid-template-columns: 1fr 1fr; margin: 50px 0 100px; }
 .case-pair section { padding: 45px; border: 1px solid var(--ink); }
 .case-pair section + section { border-left: 0; }
@@ -212,6 +221,8 @@ h1 em, .page-hero h1 em { color: var(--cobalt); font-family: Georgia, serif; fon
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
   .project-list-grid { grid-template-columns: repeat(2, 1fr); }
   .case-hero-grid { grid-template-columns: 1fr 1fr; }
+  .track-card { min-height: 390px; padding: 25px; }
+  .track-card h3 { margin-top: 50px; font-size: clamp(1.6rem, 3.4vw, 2.3rem); }
 }
 
 @media (max-width: 720px) {

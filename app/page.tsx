@@ -3,7 +3,15 @@ import { ArrowDownRight, ArrowRight, ArrowUpRight, Github, MapPin } from "lucide
 import { ProjectCard } from "@/components/project-card";
 import { SectionHeading } from "@/components/section-heading";
 import { certificates, education, experience, profile, skillGroups } from "@/data/profile";
-import { projectCategories, projects } from "@/data/projects";
+import { projectCategories, projectCategoryIds, projects, type ProjectCategory } from "@/data/projects";
+
+const trackDescriptions: Record<ProjectCategory, string> = {
+  "Data Science & Machine Learning": "Forecasting, computer vision and model adaptation—built around reproducible questions and honest evaluation.",
+  "Data Engineering": "Ingestion, modelling, quality gates and reproducible reporting—designed to preserve trusted data through reruns, backfills and failures.",
+  "Software & AI Applications": "AI workflows and geospatial products—designed as clear, inspectable systems rather than black boxes."
+};
+
+const projectCountWords = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
 
 export default function Home() {
   const featured = projects.filter((project) => project.featured);
@@ -31,9 +39,9 @@ export default function Home() {
       </section>
 
       <section className="section shell" id="selected-work">
-        <SectionHeading index="01" eyebrow="Selected work" title="Projects shaped by real questions." body="A selection spanning applied machine learning, geospatial analysis and AI-enabled product engineering." />
+        <SectionHeading index="01" eyebrow="Selected work" title="Projects shaped by real questions." body="A selection spanning data engineering, applied machine learning, geospatial analysis and AI-enabled product engineering." />
         <div className="featured-grid">{featured.map((project) => <ProjectCard key={project.slug} project={project} featured />)}</div>
-        <div className="section-link"><Link href="/projects">View all seven projects <ArrowRight size={16} /></Link></div>
+        <div className="section-link"><Link href="/projects">View all {projectCountWords[projects.length] ?? projects.length} projects <ArrowRight size={16} /></Link></div>
       </section>
 
       <section className="section skills-section">
@@ -49,12 +57,12 @@ export default function Home() {
       </section>
 
       <section className="section shell">
-        <SectionHeading index="03" eyebrow="Two connected tracks" title="Analysis and application, in dialogue." />
+        <SectionHeading index="03" eyebrow="Three connected tracks" title="Analysis, infrastructure and application—in dialogue." />
         <div className="tracks-grid">{projectCategories.map((category, index) => {
           const categoryProjects = projects.filter((project) => project.category === category);
           return (
-            <Link href={`/projects#${index === 0 ? "data-science" : "software-ai"}`} className={`track-card track-${index + 1}`} key={category}>
-              <div><span className="track-index">TRACK / 0{index + 1}</span><h3>{category}</h3><p>{index === 0 ? "Forecasting, computer vision and model adaptation—built around reproducible questions and honest evaluation." : "AI workflows and geospatial products—designed as clear, inspectable systems rather than black boxes."}</p></div>
+            <Link href={`/projects#${projectCategoryIds[category]}`} className={`track-card track-${index + 1}`} key={category}>
+              <div><span className="track-index">TRACK / 0{index + 1}</span><h3>{category}</h3><p>{trackDescriptions[category]}</p></div>
               <div className="track-bottom"><span>{categoryProjects.length} projects</span><ArrowUpRight /></div>
             </Link>
           );

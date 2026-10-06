@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
@@ -52,6 +53,18 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <section className="case-section"><span className="case-section-index">01</span><div><p className="eyebrow">Problem / challenge</p><h2>What needed to be understood?</h2><p>{project.challenge}</p></div></section>
         <section className="case-section"><span className="case-section-index">02</span><div><p className="eyebrow">Approach</p><h2>Working from question to system.</h2><ol className="approach-list">{project.approach.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, "0")}</span><p>{item}</p></li>)}</ol></div></section>
         <section className="case-section"><span className="case-section-index">03</span><div><p className="eyebrow">Technology</p><h2>The working toolkit.</h2><ul className="tech-list">{project.technology.map((item) => <li key={item}>{item}</li>)}</ul></div></section>
+        {project.media?.caseStudy && (
+          <figure className="case-figure">
+            {project.media.caseStudy.href ? (
+              <a href={project.media.caseStudy.href} target="_blank" rel="noreferrer" aria-label={`Open the ${project.title} interactive dashboard in a new tab`}>
+                <Image src={project.media.caseStudy.src} alt={project.media.caseStudy.alt} width={1440} height={1050} sizes="(max-width: 1240px) calc(100vw - 40px), 1200px" />
+              </a>
+            ) : (
+              <Image src={project.media.caseStudy.src} alt={project.media.caseStudy.alt} width={1440} height={1050} sizes="(max-width: 1240px) calc(100vw - 40px), 1200px" />
+            )}
+            {project.media.caseStudy.caption && <figcaption>{project.media.caseStudy.caption}</figcaption>}
+          </figure>
+        )}
         <div className="case-pair">
           <section><p className="eyebrow">04 / Evidence & validation</p><h2>What supports the work.</h2><p>{project.evidence}</p></section>
           <section className="result-panel"><p className="eyebrow">05 / Result</p><h2>Where it arrived.</h2><p>{project.result}</p></section>
