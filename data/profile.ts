@@ -3,7 +3,7 @@ export const profile = {
   location: "Nairobi, Kenya",
   email: "marcusjeicob@gmail.com",
   github: "https://github.com/BEMOREMJ",
-  linkedin: "https://www.linkedin.com/in/mark-jacob-953099214/"
+  linkedin: "https://www.linkedin.com/in/mark-nyumba-953099214"
 };
 
 export const skillGroups = [

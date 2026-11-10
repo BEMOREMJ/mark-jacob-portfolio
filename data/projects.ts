@@ -36,11 +36,16 @@ export type Project = {
   media?: ProjectMedia;
   featured: boolean;
   accent: "cobalt" | "teal" | "amber";
+  visual: {
+    kind: "assessment" | "forecast" | "map" | "vision" | "adaptation" | "workflow" | "pose" | "pipeline";
+    label: string;
+  };
 };
 
 export const projects: Project[] = [
   {
     slug: "biasharamind",
+    visual: { kind: "assessment", label: "Assessment / diagnosis / roadmap" },
     number: "01",
     title: "BiasharaMind",
     category: "Software & AI Applications",
@@ -65,6 +70,7 @@ export const projects: Project[] = [
   },
   {
     slug: "global-water-storage-forecasting",
+    visual: { kind: "forecast", label: "Geospatial / multi-horizon forecasting" },
     number: "02",
     title: "Global Water Storage Forecasting",
     category: "Data Science & Machine Learning",
@@ -89,6 +95,7 @@ export const projects: Project[] = [
   },
   {
     slug: "majiwatch",
+    visual: { kind: "map", label: "Water observations / geospatial context" },
     number: "03",
     title: "MajiWatch",
     category: "Software & AI Applications",
@@ -116,6 +123,7 @@ export const projects: Project[] = [
   },
   {
     slug: "pneumonia-detection",
+    visual: { kind: "vision", label: "Image classification / model study" },
     number: "04",
     title: "Pneumonia Detection",
     category: "Data Science & Machine Learning",
@@ -139,6 +147,7 @@ export const projects: Project[] = [
   },
   {
     slug: "qwen-fine-tuning",
+    visual: { kind: "adaptation", label: "LoRA / bounded model adaptation" },
     number: "05",
     title: "Qwen2.5-7B Fine-Tuning",
     category: "Data Science & Machine Learning",
@@ -162,6 +171,7 @@ export const projects: Project[] = [
   },
   {
     slug: "raimon-agent-workflow",
+    visual: { kind: "workflow", label: "Agent orchestration / review points" },
     number: "06",
     title: "Raimon Agent Workflow",
     category: "Software & AI Applications",
@@ -185,6 +195,7 @@ export const projects: Project[] = [
   },
   {
     slug: "formfit-browser-pose-tracking",
+    visual: { kind: "pose", label: "Pose tracking / movement analysis" },
     number: "07",
     title: "FormFit Browser Pose Tracking",
     category: "Software & AI Applications",
@@ -208,6 +219,7 @@ export const projects: Project[] = [
   },
   {
     slug: "kenya-economic-data-platform",
+    visual: { kind: "pipeline", label: "Ingest / model / validate / report" },
     number: "08",
     title: "Kenya Economic Data Platform",
     category: "Data Engineering",
