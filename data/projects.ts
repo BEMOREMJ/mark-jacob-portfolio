@@ -17,6 +17,11 @@ export type ProjectMedia = {
   caseStudy?: ProjectImage;
 };
 
+export type ProjectCapability = {
+  skill: string;
+  evidence: string;
+};
+
 export type Project = {
   slug: string;
   number: string;
@@ -28,6 +33,7 @@ export type Project = {
   summary: string;
   challenge: string;
   approach: string[];
+  capabilities: ProjectCapability[];
   technology: string[];
   evidence: string;
   result: string;
@@ -60,6 +66,15 @@ export const projects: Project[] = [
       "Kept scoring, prioritization and business-rule boundaries deterministic while using AI for bounded interpretation and writing through structured outputs, evaluation and observability.",
       "Built the Next.js and FastAPI application, controlled-access workflow, durable generation state, retries and recovery needed to support the complete private-beta journey."
     ],
+    capabilities: [
+      { skill: "Systems thinking", evidence: "Connected business context, assessments, scoring, diagnoses, priorities and roadmaps into a coherent decision-support workflow." },
+      { skill: "System architecture", evidence: "Designed the responsibilities and interactions of the Next.js frontend, FastAPI backend, database and AI services." },
+      { skill: "Data architecture & domain modelling", evidence: "Modelled business profiles, assessments, diagnoses, priorities and roadmaps through version-aware PostgreSQL and Supabase data structures." },
+      { skill: "AI system design & governance", evidence: "Established deterministic scoring and prioritization boundaries, with AI limited to bounded interpretation and writing through structured outputs." },
+      { skill: "Workflow orchestration & reliability engineering", evidence: "Implemented durable generation state, retries and recovery across the assessment-to-report journey." },
+      { skill: "Evaluation & quality engineering", evidence: "Used automated backend tests, LLM evaluation and observability to examine workflow behavior and deterministic and AI boundaries." },
+      { skill: "Product engineering", evidence: "Translated SME research and business requirements into assessment dimensions, diagnostic logic and application workflows." }
+    ],
     technology: ["Next.js", "TypeScript", "FastAPI", "Python", "PostgreSQL", "Supabase", "Data modelling", "OpenAI", "Opik", "Structured outputs", "LLM evaluation"],
     evidence: "The deployed private beta supports the complete journey from business profile and assessment through diagnosis, priorities, roadmap and report generation. Its deterministic and AI boundaries are supported by an extensive automated backend test suite and documented beta-readiness validation.",
     result: "A deployed product in which approved beta users can complete the full assessment-to-roadmap journey. Its architecture provides a controlled foundation for evaluating whether the guidance is useful, understandable and valuable enough for business owners to return.",
@@ -85,6 +100,12 @@ export const projects: Project[] = [
       "Used Polars, DuckDB and memory-aware processing to make reproducible experimentation practical on constrained local hardware.",
       "Preserved negative results and rejected models when they failed horizon, recent-period or promotion-gate checks, even when an aggregate metric appeared promising."
     ],
+    capabilities: [
+      { skill: "Experimental design & validation", evidence: "Built target-disjoint rolling-origin folds and reproduced the test masking pattern to evaluate effective forecast horizons without future-data leakage." },
+      { skill: "ML pipeline architecture", evidence: "Organized reproducible baselines, residual models, diagnostics and promotion conditions into a consistent forecasting workflow." },
+      { skill: "Model selection & error analysis", evidence: "Compared horizon and recent-period behavior, preserved negative results and rejected challengers that failed predefined promotion conditions." },
+      { skill: "Resource-aware data processing", evidence: "Used Polars, DuckDB and memory-aware processing to run experiments on constrained local hardware." }
+    ],
     technology: ["Python", "Geospatial ML", "Time-series forecasting", "LightGBM", "CatBoost", "Polars", "DuckDB", "scikit-learn", "Reproducible ML"],
     evidence: "The frozen two-fold validation protocol evaluated 551,965 out-of-fold rows. The selected P3-M3B residual LightGBM model achieved a pooled local OOF RMSE of 0.583923 and a public score of 0.766408529. The difference is reported openly, and leaderboard feedback was not used to revise the frozen validation protocol.",
     result: "P3-M3B was retained as the final reference after the guarded ensemble and CatBoost challenger failed predefined promotion conditions. The completed repository preserves the validation design, experiments, diagnostics, rejected alternatives and reproducible implementation.",
@@ -108,6 +129,11 @@ export const projects: Project[] = [
       "Combined map-based exploration with concise contextual information for each observation.",
       "Designed data boundaries so collection, transformation and presentation remain traceable.",
       "Used progressive disclosure to keep the primary view understandable while retaining technical detail."
+    ],
+    capabilities: [
+      { skill: "Geospatial application design", evidence: "Connected water-related observations, map context and a public application workflow in a deployed V1 proof of concept." },
+      { skill: "Data lineage & traceability", evidence: "Defined boundaries between data collection, transformation and presentation so observations retain inspectable context." },
+      { skill: "Information design", evidence: "Used map-based exploration and progressive disclosure to present environmental observations with concise contextual detail." }
     ],
     technology: ["Next.js", "Geospatial web application", "Base Sepolia", "Smart contracts"],
     evidence: "The public V1 application, source repository and Base Sepolia contract provide inspectable implementation evidence. The project won the Remix AI Bootcamp for Real-World Impact.",
@@ -137,6 +163,11 @@ export const projects: Project[] = [
       "Used convolutional modeling and held-out evaluation to study classification behavior.",
       "Treated error analysis and responsible-use boundaries as part of the result, not an afterthought."
     ],
+    capabilities: [
+      { skill: "Data preparation & quality assessment", evidence: "Prepared and inspected labelled chest X-ray images before model training, with attention to class imbalance and dataset limitations." },
+      { skill: "Model development & validation", evidence: "Built a convolutional image-classification workflow and used held-out evaluation to inspect model behavior." },
+      { skill: "Error analysis & responsible ML", evidence: "Examined model outputs and documented educational-use boundaries alongside unresolved dataset-shift and clinical-validity questions." }
+    ],
     technology: ["Python", "TensorFlow", "Keras", "NumPy", "pandas"],
     evidence: "The public repository documents the train/validation workflow and model-output inspection. No unsupported accuracy figure, clinical validation, regulatory review or deployment claim is made.",
     result: "A practical study of an end-to-end computer-vision workflow and the evaluation questions that accompany it.",
@@ -160,6 +191,12 @@ export const projects: Project[] = [
       "Prepared instruction-style training examples with attention to consistency and leakage.",
       "Applied LoRA-based adaptation to limit the number of trainable parameters.",
       "Compared outputs against the base model using repeatable prompts and review criteria while keeping deterministic controls authoritative."
+    ],
+    capabilities: [
+      { skill: "Training-data design", evidence: "Prepared instruction-style examples with attention to consistency and leakage for bounded SME-advisory explanation and writing tasks." },
+      { skill: "Parameter-efficient model adaptation", evidence: "Applied LoRA to Qwen2.5-7B to limit trainable parameters while working within compute constraints." },
+      { skill: "Comparative LLM evaluation", evidence: "Compared adapted and base-model outputs using repeatable prompts and review criteria; formal benchmarking remains to be documented." },
+      { skill: "AI system design & governance", evidence: "Kept deterministic controls authoritative and treated the adapted model as a separate research experiment from the deployed BiasharaMind application." }
     ],
     technology: ["Python", "PyTorch", "Qwen2.5-7B", "LoRA", "LLM evaluation"],
     evidence: "The experiment supports side-by-side output review. A formal benchmark, safety assessment and cost analysis still need to be documented.",
@@ -185,6 +222,11 @@ export const projects: Project[] = [
       "Made state transitions and failure paths visible for easier debugging.",
       "Added review points where automated output requires human judgment."
     ],
+    capabilities: [
+      { skill: "Collaborative agent workflow design", evidence: "Contributed to dividing specialized AI steps into narrow roles with explicit inputs and outputs." },
+      { skill: "State & failure-path modelling", evidence: "Contributed to visible state transitions and failure paths that support workflow inspection and debugging." },
+      { skill: "Human review integration", evidence: "Contributed review points where automated outputs require human judgment, supported by qualitative inspection of workflow runs." }
+    ],
     technology: ["Python", "LangGraph", "CrewAI", "LLM evaluation", "Git"],
     evidence: "Traceable workflow runs provide qualitative evidence about orchestration behavior. Reliability rates and production readiness are not claimed.",
     result: "A demonstrated collaborative workflow for comparing orchestration patterns and identifying where agent systems need stronger controls.",
@@ -208,6 +250,11 @@ export const projects: Project[] = [
       "Ran MediaPipe pose tracking in the browser to keep interaction close to the user.",
       "Translated landmarks into deterministic squat-analysis cues with conservative thresholds.",
       "Designed feedback to acknowledge tracking loss instead of presenting uncertain output as fact."
+    ],
+    capabilities: [
+      { skill: "Browser feature engineering", evidence: "Contributed to a browser-based MediaPipe pose-tracking feature with immediate movement feedback." },
+      { skill: "Deterministic decision logic", evidence: "Translated pose landmarks into squat-analysis cues using conservative thresholds." },
+      { skill: "Uncertainty-aware interaction design", evidence: "Designed feedback that acknowledges tracking loss and the influence of camera angle, lighting and device constraints." }
     ],
     technology: ["TypeScript", "MediaPipe", "Browser APIs", "Deterministic analysis"],
     evidence: "Interactive testing demonstrates the browser workflow across ordinary webcam conditions. No biomechanical or clinical validation is claimed.",
@@ -234,6 +281,13 @@ export const projects: Project[] = [
       "Implemented deterministic reruns, bounded retries, targeted historical backfills and critical quality gates that protect trusted reports when candidate data fails validation.",
       "Added immutable-by-application reporting releases, source-to-report reconciliation, pipeline-health reporting, recovery procedures, an operator runbook and offline GitHub Actions validation.",
       "Published a static, interactive Plotly dashboard from the trusted weather release while withholding exchange-rate visualization until CBK redistribution terms are resolved."
+    ],
+    capabilities: [
+      { skill: "Data architecture & dimensional modelling", evidence: "Designed separate exchange-rate and location-level weather facts with dbt staging, dimensions, facts and monthly reporting marts." },
+      { skill: "Pipeline orchestration & recovery", evidence: "Implemented deterministic reruns, bounded retries, targeted historical backfills and recovery procedures." },
+      { skill: "Data governance & lineage", evidence: "Preserved source snapshots, timestamps, checksums and ingestion manifests, and documented provenance and redistribution constraints." },
+      { skill: "Quality engineering & guarded publishing", evidence: "Used quality gates and source-to-report reconciliation to prevent failed candidates from replacing trusted reporting releases." },
+      { skill: "Reporting & operational design", evidence: "Connected validated reporting releases to an interactive weather dashboard, pipeline-health reporting and an operator runbook." }
     ],
     technology: ["Python", "SQL", "BigQuery Sandbox", "dbt Core", "SQLite", "Plotly", "GitHub Actions", "GitHub Pages"],
     evidence: "The verified release reconciles 177 CBK exchange-rate observations and 306 NASA POWER weather observations into 19 monthly reporting rows: nine exchange-rate rows and ten weather rows. All nine sprint acceptance gates passed, and the warehouse completed 39 dbt tests successfully.",

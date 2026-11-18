@@ -7,10 +7,14 @@ export const profile = {
 };
 
 export const skillGroups = [
-  { title: "Data Science & Analysis", skills: ["Python", "SQL", "pandas", "Statistical analysis", "Data visualization", "Power BI", "Decision support"] },
-  { title: "Machine Learning & AI Engineering", skills: ["scikit-learn", "TensorFlow / Keras", "PyTorch", "LightGBM", "Forecasting", "Computer vision", "LLM evaluation", "LoRA", "LangGraph"] },
-  { title: "Data & Backend Engineering", skills: ["Data modelling", "ETL workflows", "PostgreSQL", "FastAPI", "Supabase", "APIs", "Data validation"] },
-  { title: "Geospatial Systems & Digital Transformation", skills: ["ArcGIS Pro", "Google Earth Engine", "Geospatial analysis", "Enterprise architecture", "BPMN", "Ardoq", "Camunda", "Process improvement"] }
+  { title: "Systems & Architecture", skills: ["Systems thinking", "System architecture", "Data architecture", "Domain modelling", "Product engineering", "Workflow orchestration", "Reliability engineering", "Evaluation & quality engineering"] },
+  { title: "Data Science & Analysis", skills: ["Python", "SQL", "NumPy", "pandas", "Polars", "Statistical analysis", "Data visualization", "Power BI", "Plotly", "Decision support", "Experimental design", "Error analysis"] },
+  { title: "Machine Learning & Evaluation", skills: ["scikit-learn", "TensorFlow / Keras", "PyTorch", "LightGBM", "CatBoost", "Forecasting", "Time-series forecasting", "Computer vision", "MediaPipe", "Reproducible ML", "Validation design", "ML pipeline architecture"] },
+  { title: "Generative AI & Agents", skills: ["OpenAI", "Qwen2.5-7B", "LoRA", "LLM evaluation", "Structured outputs", "LangGraph", "CrewAI", "Opik", "AI system design & governance", "Training-data design", "Parameter-efficient model adaptation", "Human review integration"] },
+  { title: "Data & Backend Engineering", skills: ["Data modelling", "ETL workflows", "PostgreSQL", "FastAPI", "Supabase", "APIs", "Data validation", "BigQuery Sandbox", "dbt Core", "DuckDB", "SQLite", "Data lineage", "Backfills & recovery controls"] },
+  { title: "Web & Application Engineering", skills: ["TypeScript", "Next.js", "HTML / CSS", "Browser APIs", "Deterministic analysis", "Git", "GitHub Actions", "GitHub Pages", "Node.js", "pnpm", "Automated testing", "Static site export"] },
+  { title: "Geospatial Systems & Prototyping", skills: ["ArcGIS Pro", "Google Earth Engine", "Geospatial analysis", "Geospatial ML", "Geospatial web application", "Spatial data science", "Base Sepolia", "Smart contracts", "Information design"] },
+  { title: "Digital Transformation & Delivery", skills: ["Enterprise architecture", "BPMN", "Ardoq", "Camunda", "Process improvement", "Requirements gathering", "Product ownership", "Stakeholder coordination"] }
 ];
 
 export const experience = [

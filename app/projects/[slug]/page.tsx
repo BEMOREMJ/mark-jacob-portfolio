@@ -52,7 +52,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       <article className="case-body shell">
         <section className="case-section"><span className="case-section-index">01</span><div><p className="eyebrow">Problem / challenge</p><h2>What needed to be understood?</h2><p>{project.challenge}</p></div></section>
         <section className="case-section"><span className="case-section-index">02</span><div><p className="eyebrow">Approach</p><h2>Working from question to system.</h2><ol className="approach-list">{project.approach.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, "0")}</span><p>{item}</p></li>)}</ol></div></section>
-        <section className="case-section"><span className="case-section-index">03</span><div><p className="eyebrow">Technology</p><h2>The working toolkit.</h2><ul className="tech-list">{project.technology.map((item) => <li key={item}>{item}</li>)}</ul></div></section>
+        <section className="case-section"><span className="case-section-index">03</span><div><p className="eyebrow">Applied capabilities</p><h2>The thinking behind the build.</h2><dl className="capability-list">{project.capabilities.map((capability) => <div key={capability.skill}><dt>{capability.skill}</dt><dd>{capability.evidence}</dd></div>)}</dl></div></section>
+        <section className="case-section"><span className="case-section-index">04</span><div><p className="eyebrow">Technology</p><h2>The working toolkit.</h2><ul className="tech-list">{project.technology.map((item) => <li key={item}>{item}</li>)}</ul></div></section>
         {project.media?.caseStudy && (
           <figure className="case-figure">
             {project.media.caseStudy.href ? (
@@ -66,10 +67,10 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           </figure>
         )}
         <div className="case-pair">
-          <section><p className="eyebrow">04 / Evidence & validation</p><h2>What supports the work.</h2><p>{project.evidence}</p></section>
-          <section className="result-panel"><p className="eyebrow">05 / Result</p><h2>Where it arrived.</h2><p>{project.result}</p></section>
+          <section><p className="eyebrow">05 / Evidence & validation</p><h2>What supports the work.</h2><p>{project.evidence}</p></section>
+          <section className="result-panel"><p className="eyebrow">06 / Result</p><h2>Where it arrived.</h2><p>{project.result}</p></section>
         </div>
-        <section className="limitations"><p className="eyebrow">06 / Honest boundaries</p><h2>Limitations matter.</h2><p>{project.limitations}</p></section>
+        <section className="limitations"><p className="eyebrow">07 / Honest boundaries</p><h2>Limitations matter.</h2><p>{project.limitations}</p></section>
         <section className="project-links">
           <div>
             <p className="eyebrow">Project links</p>

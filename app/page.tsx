@@ -46,7 +46,7 @@ export default function Home() {
 
       <section className="section skills-section">
         <div className="shell">
-          <SectionHeading index="02" eyebrow="Capabilities" title="From raw signal to reliable system." body="I combine analytical depth with the engineering needed to move an idea into a usable, testable form." />
+          <SectionHeading index="02" eyebrow="Capabilities" title="From raw signal to reliable system." body="Systems thinking, architecture and careful evaluation connect my work across data, AI and product engineering. Each project documents how these capabilities were applied." />
           <div className="skills-grid">{skillGroups.map((group, index) => (
             <article className="skill-group" key={group.title}>
               <span className="skill-number">0{index + 1}</span><h3>{group.title}</h3>

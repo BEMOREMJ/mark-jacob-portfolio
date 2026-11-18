@@ -30,3 +30,9 @@ Also audit generated project routes, internal links and public content for priva
 - Publish project URLs only after they are confirmed public.
 - Never publish a phone number, home address, credential, token or private project information.
 - DigiCow and Tana River Flood Mapping are prohibited from public site content, metadata, examples and generated routes.
+
+## Career content and resumes
+
+- Follow `CAREER-CONTENT.md` when preparing portfolio copy, GitHub profile content or a resume for a job application.
+- Include role-relevant engineering capabilities alongside tools, supported by the project evidence in `data/projects.ts`.
+- Preserve distinctions between founder/builder work, solo experiments and collaborative contributions when tailoring resumes.

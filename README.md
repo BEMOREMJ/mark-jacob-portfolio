@@ -49,13 +49,13 @@ public/                 Static assets (when needed)
 netlify.toml             Static hosting build and security headers
 ```
 
-Project facts live in `data/projects.ts`; experience, education, skills and certificates live in `data/profile.ts`. This keeps content separate from presentation and makes routine updates possible without editing page layouts.
+Project facts and evidence-backed applied capabilities live in `data/projects.ts`; experience, education, skills and certificates live in `data/profile.ts`. This keeps content separate from presentation and makes routine updates possible without editing page layouts. `CAREER-CONTENT.md` records how to select these capabilities for GitHub profile copy and future job-application resumes while preserving ownership and project limitations.
 
 ## Routes
 
 - `/` — overview, featured projects, capabilities, experience and credentials
-- `/projects/` — complete project collection grouped into two tracks
-- `/projects/[slug]/` — seven statically generated case studies
+- `/projects/` — complete project collection grouped into three tracks
+- `/projects/[slug]/` — eight statically generated case studies
 
 ## Netlify
 
