@@ -16,8 +16,8 @@ export default function ProjectsPage() {
       <header className="page-hero shell">
         <div className="page-count">INDEX / {String(projects.length).padStart(2, "0")}</div>
         <p className="eyebrow">Project archive</p>
-        <h1>Selected experiments,<br /><em>systems & studies.</em></h1>
-        <p>Work across data science, data engineering, machine learning, reliable AI, product engineering and geospatial analysis. Each case study documents what was attempted—and where the boundaries remain.</p>
+        <h1>Project <em>case studies</em></h1>
+        <p>Explore forecasting experiments, AI workflows and the data pipelines behind them. Each case study describes my contribution, the result and how I checked it.</p>
       </header>
       {projectCategories.map((category, categoryIndex) => {
         const categoryProjects = projects.filter((project) => project.category === category);

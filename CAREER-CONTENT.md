@@ -6,6 +6,7 @@ Mark wants systems thinking, architecture and other demonstrated engineering cap
 
 - `data/projects.ts`: each project's ownership, status, applied capabilities, supporting evidence and limitations.
 - `data/profile.ts`: documented tools and broader capabilities, education and experience.
+- The referral CV uses the same 15 skills, four experience entries and project summaries as the website. Run `python scripts/build_cv.py` with Node 24.13.0 and ReportLab after editing the data. The generated PDF goes in `public/` for the static export.
 
 ## Tailoring each application
 
@@ -16,10 +17,10 @@ Use this evidence map when choosing examples:
 | Project | Relevant capabilities | Scope to preserve |
 | --- | --- | --- |
 | BiasharaMind | Systems thinking; system architecture; data architecture and domain modelling; AI system design and governance; workflow orchestration; reliability engineering; evaluation and quality engineering; product engineering | Founder and builder; deployed private beta; business outcomes remain under evaluation |
-| BiasharaMind Qwen2.5-7B fine-tuning | Training-data design; parameter-efficient model adaptation; comparative LLM evaluation; deterministic decision boundaries | Solo experiment, separate from the deployed application; formal benchmark and broader validation remain undocumented |
+| BiasharaMind Qwen2.5-7B fine-tuning | Training-data design, LoRA adaptation and rule-based LLM evaluation | Solo experiment separate from the deployed application. The final adapter averaged 20.8/21 across ten held-out synthetic outputs. Broader validation remains open. |
 | Kenya Economic Data Platform | Data architecture and dimensional modelling; pipeline orchestration and recovery; data governance and lineage; quality gates; guarded publishing; reporting and operational design | Solo historical data platform; local orchestration; public weather dashboard |
 | Global Water Storage Forecasting | Experimental and validation design; ML pipeline architecture; model selection and error analysis; resource-aware processing | Solo competition case study; local and public scores differ; operational drought-warning performance is not established |
-| MajiWatch | Geospatial application design; data lineage and traceability; information design | Solo deployed V1 proof of concept; adoption and production-scale infrastructure are not established |
+| MajiWatch | Location-based reporting, evidence linkage and issue tracking | Solo deployed V1 proof of concept. Adoption remains unmeasured. |
 | Pneumonia Detection | Data preparation and quality assessment; model development and validation; error analysis and responsible ML | Solo educational image-classification prototype; no clinical validation |
 | Raimon Agent Workflow | Collaborative agent workflow design; state and failure-path modelling; human review integration | Collaborative contribution; qualitative workflow evidence |
 | FormFit Browser Pose Tracking | Browser feature engineering; deterministic decision logic; uncertainty-aware interaction design | Collaborative feature contribution; pose-tracking prototype; no biomechanical or clinical validation |

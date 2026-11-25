@@ -71,16 +71,15 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           <section className="result-panel"><p className="eyebrow">06 / Result</p><h2>Where it arrived.</h2><p>{project.result}</p></section>
         </div>
         <section className="limitations"><p className="eyebrow">07 / Honest boundaries</p><h2>Limitations matter.</h2><p>{project.limitations}</p></section>
-        <section className="project-links">
+        {project.links.length > 0 && <section className="project-links">
           <div>
             <p className="eyebrow">Project links</p>
-            <h2>{project.links.length ? "Inspect the public work." : "No public link approved."}</h2>
-            <p>{project.links.length ? "Only owner-confirmed public destinations are listed." : "This case study is complete without a speculative repository, report or demo URL."}</p>
+            <h2>Explore the project</h2>
           </div>
-          {project.links.length > 0 && <div className="project-link-list">{project.links.map((link) => (
+          <div className="project-link-list">{project.links.map((link) => (
             <a className="button outline" href={link.url} target="_blank" rel="noreferrer" key={link.url}>{link.label} <ArrowUpRight size={14} /></a>
-          ))}</div>}
-        </section>
+          ))}</div>
+        </section>}
       </article>
       <nav className="next-project shell" aria-label="Case study navigation">
         <span>Next case study / {nextProject.number}</span>

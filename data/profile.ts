@@ -6,22 +6,27 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/mark-nyumba-953099214"
 };
 
+export const career = {
+  title: "Data Scientist & AI/ML Engineer",
+  availability: "Open to Data Scientist / ML Engineer roles",
+  summary: "I draw on my geospatial engineering background to forecast water storage and study where predictions break down. I also build AI decision-support tools for small businesses, using explicit rules for scoring and tests to check the generated advice.",
+  cvPath: "/mark-jacob-nyumba-cv.pdf"
+};
+
 export const skillGroups = [
-  { title: "Systems & Architecture", skills: ["Systems thinking", "System architecture", "Data architecture", "Domain modelling", "Product engineering", "Workflow orchestration", "Reliability engineering", "Evaluation & quality engineering"] },
-  { title: "Data Science & Analysis", skills: ["Python", "SQL", "NumPy", "pandas", "Polars", "Statistical analysis", "Data visualization", "Power BI", "Plotly", "Decision support", "Experimental design", "Error analysis"] },
-  { title: "Machine Learning & Evaluation", skills: ["scikit-learn", "TensorFlow / Keras", "PyTorch", "LightGBM", "CatBoost", "Forecasting", "Time-series forecasting", "Computer vision", "MediaPipe", "Reproducible ML", "Validation design", "ML pipeline architecture"] },
-  { title: "Generative AI & Agents", skills: ["OpenAI", "Qwen2.5-7B", "LoRA", "LLM evaluation", "Structured outputs", "LangGraph", "CrewAI", "Opik", "AI system design & governance", "Training-data design", "Parameter-efficient model adaptation", "Human review integration"] },
-  { title: "Data & Backend Engineering", skills: ["Data modelling", "ETL workflows", "PostgreSQL", "FastAPI", "Supabase", "APIs", "Data validation", "BigQuery Sandbox", "dbt Core", "DuckDB", "SQLite", "Data lineage", "Backfills & recovery controls"] },
-  { title: "Web & Application Engineering", skills: ["TypeScript", "Next.js", "HTML / CSS", "Browser APIs", "Deterministic analysis", "Git", "GitHub Actions", "GitHub Pages", "Node.js", "pnpm", "Automated testing", "Static site export"] },
-  { title: "Geospatial Systems & Prototyping", skills: ["ArcGIS Pro", "Google Earth Engine", "Geospatial analysis", "Geospatial ML", "Geospatial web application", "Spatial data science", "Base Sepolia", "Smart contracts", "Information design"] },
-  { title: "Digital Transformation & Delivery", skills: ["Enterprise architecture", "BPMN", "Ardoq", "Camunda", "Process improvement", "Requirements gathering", "Product ownership", "Stakeholder coordination"] }
+  { title: "Data & analytics", skills: ["Python", "SQL", "Dimensional modelling", "Data quality testing", "Data visualization"] },
+  { title: "Machine learning", skills: ["Time-series forecasting", "Gradient boosting (LightGBM)", "Cross-validation", "Error analysis", "CNN image classification"] },
+  { title: "Applied AI", skills: ["LLM evaluation", "LoRA fine-tuning", "Structured outputs", "Agent workflow orchestration", "API design (FastAPI)"] }
 ];
 
 export const experience = [
-  { role: "Python & AI Evaluation Contractor", organization: "Independent work conducted through the Turing platform", dates: "Oct 2025 — Present", location: "Nairobi", detail: "Contributed to structured evaluation and improvement tasks involving Python and AI-generated technical work." },
-  { role: "Organization Data Analyst", organization: "Digital Qatalyst", dates: "Mar 2024 — Sep 2025", location: "Nairobi", detail: "Designed data frameworks, dashboards and analytical workflows supporting decision-making across several sectors. Built GenAI tools, supported enterprise architecture and digital transformation initiatives, and coordinated requirements and delivery as a product owner." },
-  { role: "Site Supervisor", organization: "Synoqs Africa Ltd", dates: "Apr 2023 — May 2024", location: "Nairobi", detail: "Coordinated site operations, quality inspections, materials, safety procedures and communication between clients, engineers and subcontractors. The role strengthened practical delivery, stakeholder coordination and operational problem-solving." },
-  { role: "Technical Sales Representative", organization: "CNBM", dates: "Jan 2023 — Apr 2023", location: "Nairobi", detail: "Prepared roofing estimates and translated project requirements into technical designs and product recommendations. Worked with clients, contractors, engineers and technical teams to develop suitable project solutions." }
+  { role: "Python & AI Evaluation Contractor", organization: "Independent contractor through Turing", dates: "Oct 2025 – Present", location: "Nairobi", detail: "Use reproducible Python tests to assess correctness and instruction following in AI-generated technical work. Investigate failure patterns and document findings in technical reports." },
+  { role: "Organization Data Analyst", organization: "Digital Qatalyst", dates: "Mar 2024 – Sep 2025", location: "Nairobi", detail: "Designed data structures, dashboards and reporting workflows. Built generative AI tools for information retrieval and coordinated stakeholder requirements as a product owner." }
+];
+
+export const additionalExperience = [
+  { role: "Site Supervisor", organization: "Synoqs Africa Ltd", dates: "Apr 2023 – May 2024" },
+  { role: "Technical Sales Representative", organization: "CNBM", dates: "Jan 2023 – Apr 2023" }
 ];
 
 export const education = [

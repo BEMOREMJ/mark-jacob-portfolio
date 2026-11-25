@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { ArrowDownRight, ArrowRight, ArrowUpRight, Github, MapPin } from "lucide-react";
+import { ArrowDownRight, ArrowRight, ArrowUpRight, Download, MapPin } from "lucide-react";
 import { ProjectCard } from "@/components/project-card";
 import { SectionHeading } from "@/components/section-heading";
-import { certificates, education, experience, profile, skillGroups } from "@/data/profile";
+import { additionalExperience, career, certificates, education, experience, profile, skillGroups } from "@/data/profile";
 import { projectCategories, projectCategoryIds, projects, type ProjectCategory } from "@/data/projects";
 
 const trackDescriptions: Record<ProjectCategory, string> = {
@@ -18,15 +18,15 @@ export default function Home() {
   return (
     <main id="main-content">
       <section className="hero shell">
-        <div className="hero-topline"><span>Portfolio / 2026</span><span className="availability"><i /> Open to thoughtful collaborations</span></div>
+        <div className="hero-topline"><span>Portfolio / 2026</span><span className="availability"><i /> {career.availability}</span></div>
         <div className="hero-grid">
           <div className="hero-copy">
-            <p className="eyebrow">Data Scientist · AI/ML Engineer</p>
-            <h1>Data scientist and AI/ML engineer turning complex data into practical, <em>intelligent systems.</em></h1>
-            <p className="hero-intro">I&apos;m Mark Jacob Nyumba. I work across data analysis, machine learning, data engineering, reliable AI and backend product development—bringing geospatial thinking and digital transformation experience to real-world problems.</p>
+            <p className="eyebrow">{profile.name}</p>
+            <h1>Data Scientist <em>&amp; AI/ML Engineer</em></h1>
+            <p className="hero-intro">{career.summary}</p>
             <div className="hero-actions">
               <Link href="/projects" className="button primary">Explore projects <ArrowRight size={17} /></Link>
-              <a href={profile.github} target="_blank" rel="noreferrer" className="button text-button"><Github size={17} /> GitHub <ArrowUpRight size={14} /></a>
+              <a href={career.cvPath} download className="button outline"><Download size={17} aria-hidden="true" /> Download CV (PDF)</a>
             </div>
           </div>
           <div className="hero-map" aria-label="Based in Nairobi, Kenya">
@@ -39,14 +39,14 @@ export default function Home() {
       </section>
 
       <section className="section shell" id="selected-work">
-        <SectionHeading index="01" eyebrow="Selected work" title="Projects shaped by real questions." body="A selection spanning data engineering, applied machine learning, geospatial analysis and AI-enabled product engineering." />
+        <SectionHeading index="01" eyebrow="Selected work" title="Models, evaluations and the data behind them." />
         <div className="featured-grid">{featured.map((project) => <ProjectCard key={project.slug} project={project} featured />)}</div>
         <div className="section-link"><Link href="/projects">View all {projectCountWords[projects.length] ?? projects.length} projects <ArrowRight size={16} /></Link></div>
       </section>
 
       <section className="section skills-section">
         <div className="shell">
-          <SectionHeading index="02" eyebrow="Capabilities" title="From raw signal to reliable system." body="Systems thinking, architecture and careful evaluation connect my work across data, AI and product engineering. Each project documents how these capabilities were applied." />
+          <SectionHeading index="02" eyebrow="Capabilities" title="Technical skills" />
           <div className="skills-grid">{skillGroups.map((group, index) => (
             <article className="skill-group" key={group.title}>
               <span className="skill-number">0{index + 1}</span><h3>{group.title}</h3>
@@ -57,7 +57,7 @@ export default function Home() {
       </section>
 
       <section className="section shell">
-        <SectionHeading index="03" eyebrow="Three connected tracks" title="Analysis, infrastructure and application—in dialogue." />
+        <SectionHeading index="03" eyebrow="Three connected tracks" title="Explore projects by discipline." />
         <div className="tracks-grid">{projectCategories.map((category, index) => {
           const categoryProjects = projects.filter((project) => project.category === category);
           return (
@@ -71,7 +71,7 @@ export default function Home() {
 
       <section className="section experience-section" id="experience">
         <div className="shell">
-          <SectionHeading index="04" eyebrow="Experience" title="Work grounded in careful execution." />
+          <SectionHeading index="04" eyebrow="Experience" title="Professional experience" />
           <div className="timeline">{experience.map((item, index) => (
             <article className="timeline-item" key={item.role}>
               <span className="timeline-number">0{index + 1}</span>
@@ -83,6 +83,10 @@ export default function Home() {
               <p>{item.detail}</p>
             </article>
           ))}</div>
+          <div className="earlier-roles">
+            <h3>Earlier roles</h3>
+            {additionalExperience.map((item) => <p key={item.role}><strong>{item.role}</strong> · {item.organization} · {item.dates}</p>)}
+          </div>
         </div>
       </section>
 
